@@ -15,3 +15,9 @@ function addBookToLibrary(books, name, author, pages) {
 
 let books = [];
 
+addBookToLibrary(books, "Warrior 1", "Ada", 453);
+addBookToLibrary(books, "Savior", "Bob", 341);
+addBookToLibrary(books, "Ipsum", "Lorem", 902);
+addBookToLibrary(books, "Warrior 2", "Ada", 572);
+
+books.forEach((book) => console.log(book))
