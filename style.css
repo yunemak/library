@@ -1,21 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
 .main-container {
 	background-color: antiquewhite;
 	padding: 100px;
 	height: 800px;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	gap: 100px;
 }
 
 .library {
-	display: grid;
-	grid-template-columns: repeat(3, 300px);
-	grid-template-rows: repeat(2, 300px);
-	grid-auto-rows: 300px;
-	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
 }
 
-.book {
-	padding: 20px;
-	background-color: aliceblue;
+.book, .table-header {
+	height: 50px;
+	background-color: rgb(199, 151, 28);
+	border: 1px solid black;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.book > p, .table-header > p {
+	flex: 1;
+	border: 1px solid black;
+	text-align: center;
+	height: 100%;
+}
+
+.table-header > p {
+	font-weight: bold; 
 }
