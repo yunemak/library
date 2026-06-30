@@ -1,22 +1,21 @@
-body {
+.main-container {
 	background-color: antiquewhite;
-	height: 1000px;
+	padding: 100px;
+	height: 800px;
 	display: flex;
 	justify-content: center;
+	gap: 100px;
 }
 
 .library {
-	background-color: brown;
-	width: 1000px;
-	height: 500px;
-	border: 2px solid black;
-	border-radius: 15px;
 	display: grid;
-	grid-template-rows: 5fr 4fr;
-	grid-auto-rows: 4fr;
+	grid-template-columns: repeat(3, 300px);
+	grid-template-rows: repeat(2, 300px);
+	grid-auto-rows: 300px;
+	gap: 10px;
 }
 
-.book, .table-header {
-	display: grid;
-	grid-template-columns: 2fr 2fr 1fr 1fr;
+.book {
+	padding: 20px;
+	background-color: aliceblue;
 }
