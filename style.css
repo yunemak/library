@@ -1,0 +1,22 @@
+body {
+	background-color: antiquewhite;
+	height: 1000px;
+	display: flex;
+	justify-content: center;
+}
+
+.library {
+	background-color: brown;
+	width: 1000px;
+	height: 500px;
+	border: 2px solid black;
+	border-radius: 15px;
+	display: grid;
+	grid-template-rows: 5fr 4fr;
+	grid-auto-rows: 4fr;
+}
+
+.book, .table-header {
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr 1fr;
+}
