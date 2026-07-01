@@ -20,14 +20,14 @@
 			</div>
 		</div>
 		<button id="new-book-btn" type="button">New Book</button>
-		<form>
+		<form action="" method="post">
 			<legend>Enter book information:</legend>
 			<label for="bookName">Name: </label>
-			<input id="bookName" name="bookName" type="text">
+			<input id="bookName" name="bookName" type="text" required>
 			<label for="bookAuthor">Author: </label>
-			<input id="bookAuthor" name="bookAuthor" type="text">
+			<input id="bookAuthor" name="bookAuthor" type="text" required>
 			<label for="bookPages">Pages: </label>
-			<input id="bookPages" name="bookPages" type="text">
+			<input id="bookPages" name="bookPages" type="number" required>
 			<label for="bookIsRead">Did you read?: </label>
 			<div>
 				<label>
@@ -39,8 +39,8 @@
 					Yes
 				</label>
 			</div>
+			<button type="button" id="add-book-btn">Add Book</button>
 		</form>
-		<button id="add-book-btn">Add Book</button>
 	</div>
 </body>
 </html>

@@ -66,3 +66,7 @@ form > div {
 #add-book-btn {
 	display: none;
 }
+
+input:user-invalid {
+	border: 2px solid red;
+}
