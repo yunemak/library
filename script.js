@@ -61,5 +61,6 @@ addBookBtn.addEventListener("click", function (e) {
 	addBookBtn.style.display = "none";
 	newBookBtn.style.display = "block";
 	
+	addBookToLibrary(books, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, bookIsReadInput.value);
 });
 
