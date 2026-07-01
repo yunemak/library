@@ -8,8 +8,6 @@ const addBookBtn = document.querySelector("#add-book-btn");
 const bookNameInput = document.querySelector("#bookName");
 const bookAuthorInput = document.querySelector("#bookAuthor");
 const bookPagesInput = document.querySelector("#bookPages");
-const bookIsReadInput = document.querySelector("#bookIsRead");
-
 
 function Book(name, author, pages, isRead, id) {
 	if (!new.target)
@@ -34,7 +32,7 @@ function addBookToLibrary(books, name, author, pages, isRead) {
 	let pagesPara = document.createElement("p");
 	pagesPara.textContent = book.pages;
 	let isReadPara = document.createElement("p");
-	isReadPara.textContent = book.isRead ? "Yes": "No";
+	isReadPara.textContent = isRead;
 	let idPara = document.createElement("p");
 	idPara.textContent = book.id;
 	div.appendChild(namePara);
@@ -43,6 +41,12 @@ function addBookToLibrary(books, name, author, pages, isRead) {
 	div.appendChild(isReadPara);
 	div.appendChild(idPara);
 	library.appendChild(div);
+}
+
+function cleanInputs() {
+	bookNameInput.value = "";
+	bookAuthorInput.value = "";
+	bookPagesInput.value = "";
 }
 
 addBookToLibrary(books, "Warrior 1", "Ada", 453, true);
@@ -60,7 +64,10 @@ addBookBtn.addEventListener("click", function (e) {
 	form.style.display = "none";
 	addBookBtn.style.display = "none";
 	newBookBtn.style.display = "block";
-	
-	addBookToLibrary(books, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, bookIsReadInput.value);
+	let radioIsRead = document.querySelector('input[type="radio"]:checked');
+	addBookToLibrary(books, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value);
+	cleanInputs();
 });
+
+
 

@@ -28,7 +28,16 @@
 			<label for="bookPages">Pages: </label>
 			<input id="bookPages" name="bookPages" type="text">
 			<label for="bookIsRead">Did you read?: </label>
-			<input id="bookIsRead" name="bookIsRead" type="text">
+			<div>
+				<label>
+					<input type="radio" id="bookIsRead" name="bookIsRead" value="No" checked>
+					No
+				</label>
+				<label>
+					<input type="radio" id="bookIsRead" name="bookIsRead" value="Yes">
+					Yes
+				</label>
+			</div>
 		</form>
 		<button id="add-book-btn">Add Book</button>
 	</div>
