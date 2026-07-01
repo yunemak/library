@@ -21,22 +21,14 @@
 		<button id="new-book-btn" type="button">New Book</button>
 		<form>
 			<legend>Enter book information:</legend>
-			<div>
-				<label>Name: </label>
-				<input type="text">
-			</div>
-			<div>
-				<label>Author: </label>
-				<input type="text">
-			</div>
-			<div>
-				<label>Pages: </label>
-				<input type="text">
-			</div>
-			<div>
-				<label>Did you read?: </label>
-				<input type="text">
-			</div>
+			<label for="name">Name: </label>
+			<input id="name" name="bookName" type="text">
+			<label for="author">Author: </label>
+			<input id="author" name="bookAuthor" type="text">
+			<label for="pages">Pages: </label>
+			<input id="pages" name="bookPages" type="text">
+			<label for="read">Did you read?: </label>
+			<input id="read" name="bookRead" type="text">
 		</form>
 		<button id="add-book-btn">Add Book</button>
 	</div>

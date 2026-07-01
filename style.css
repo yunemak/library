@@ -6,7 +6,6 @@
 .main-container {
 	background-color: antiquewhite;
 	padding: 100px;
-	height: 800px;
 	display: flex;
 	flex-direction: column;
 	gap: 100px;
@@ -40,19 +39,15 @@
 }
 
 form {
+	align-self: center;
 	display: none;
 	grid-template-columns: 1fr 3fr;
 	grid-template-rows: repeat(5, 1fr);
-	width: 400px;
+	gap: 30px;
 }
 
 form > legend {
 	grid-column: 1 / -1;
-}
-
-form > div {
-	display: flex;
-	gap: 20px;
 }
 
 #add-book-btn {
