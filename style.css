@@ -28,10 +28,17 @@
 }
 
 .book > div, .table-header > div {
-	flex: 1;
+	flex: 3;
 	border: 1px solid black;
-	text-align: center;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;	
+}
+
+.book > div:last-child, .table-header > div:last-child {
+	flex: 5;
 }
 
 .table-header > p {
