@@ -47,7 +47,7 @@ books.forEach((book) => {
 });
 
 newBookBtn.addEventListener("click", function (e) {
-	form.style.display = "flex";
+	form.style.display = "grid";
 	addBookBtn.style.display = "block";
 	newBookBtn.style.display = "none";	
 });
