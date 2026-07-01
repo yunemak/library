@@ -15,7 +15,9 @@ function addBookToLibrary(books, name, author, pages) {
 
 let books = [];
 const library = document.querySelector(".library");
-
+const newBookBtn = document.querySelector("#new-book-btn");
+const form = document.querySelector("form");
+const addBookBtn = document.querySelector("#add-book-btn");
 
 addBookToLibrary(books, "Warrior 1", "Ada", 453);
 addBookToLibrary(books, "Savior", "Bob", 341);
@@ -38,4 +40,13 @@ books.forEach((book) => {
 	div.appendChild(pages);
 	div.appendChild(id);
 	library.appendChild(div);	
+});
+
+newBookBtn.addEventListener("click", function (e) {
+	form.style.display = "flex";
+	addBookBtn.style.display = "block";
+	newBookBtn.style.display = "none";	
+
+
+
 });

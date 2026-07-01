@@ -38,3 +38,11 @@
 .table-header > p {
 	font-weight: bold; 
 }
+
+form {
+	display: none;
+}
+
+#add-book-btn {
+	display: none;
+}
