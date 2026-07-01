@@ -67,28 +67,16 @@ function addBookInfo(div, book) {
 	let namePara = document.createElement("p");
 	namePara.textContent = book.name;
 	nameDiv.appendChild(namePara);
-	let authorDiv = document.createElement("div");
-	let authorPara = document.createElement("p");
-	authorPara.textContent = book.author;
-	authorDiv.appendChild(authorPara);
-	let pagesDiv = document.createElement("div");
-	let pagesPara = document.createElement("p");
-	pagesPara.textContent = book.pages;
-	pagesDiv.appendChild(pagesPara);
-	let isReadDiv = document.createElement("div");
-	let isReadPara = document.createElement("p");
-	isReadPara.textContent = book.isRead;
-	isReadDiv.appendChild(isReadPara);
-	addChangeIsReadBtn(isReadDiv, isReadPara);
-	let idDiv = document.createElement("div");
-	let idPara = document.createElement("p");
-	idPara.textContent = book.id;
-	idDiv.appendChild(idPara);
-	div.appendChild(nameDiv);
-	div.appendChild(authorDiv);
-	div.appendChild(pagesDiv);
-	div.appendChild(isReadDiv);
-	div.appendChild(idDiv);
+	for (info in book) {
+		infoDiv = document.createElement("div");
+		infoPara = document.createElement("p");
+		infoPara.textContent = book[info];
+		if (info === "isRead") {
+			addChangeIsReadBtn(infoDiv, infoPara);
+		}
+		infoDiv.appendChild(infoPara);
+		div.appendChild(infoDiv);
+	}
 	library.appendChild(div);
 }
 
