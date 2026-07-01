@@ -69,6 +69,7 @@ function addBookInfo(div, book) {
 	pagesPara.textContent = book.pages;
 	let isReadPara = document.createElement("p");
 	isReadPara.textContent = book.isRead;
+	addChangeIsReadBtn(isReadPara);
 	let idPara = document.createElement("p");
 	idPara.textContent = book.id;
 	div.appendChild(namePara);
@@ -77,6 +78,15 @@ function addBookInfo(div, book) {
 	div.appendChild(isReadPara);
 	div.appendChild(idPara);
 	library.appendChild(div);
+}
+
+function addChangeIsReadBtn(isReadPara) {
+	let changeIsReadBtn = document.createElement("button");
+	changeIsReadBtn.textContent = "Change";
+	changeIsReadBtn.addEventListener("click", function (e) {
+		isReadPara.textContent = (isReadPara.textContent === "Yes") ? "No": "Yes";
+	});
+	isReadPara.appendChild(changeIsReadBtn);
 }
 
 function cleanInputs() {
