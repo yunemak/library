@@ -52,41 +52,53 @@ function addBookToLibrary(books, name, author, pages, isRead) {
 }
 
 function addDeleteBtn(div) {
+	let deleteBtnDiv = document.createElement("div");
 	let deleteBtn = document.createElement("button");
 	deleteBtn.textContent = "delete";
 	deleteBtn.addEventListener("click", function (e) {
 		div.remove();
 	});
-	div.appendChild(deleteBtn);
+	deleteBtnDiv.appendChild(deleteBtn);
+	div.appendChild(deleteBtnDiv);
 }
 
 function addBookInfo(div, book) {
+	let nameDiv = document.createElement("div");
 	let namePara = document.createElement("p");
 	namePara.textContent = book.name;
+	nameDiv.appendChild(namePara);
+	let authorDiv = document.createElement("div");
 	let authorPara = document.createElement("p");
 	authorPara.textContent = book.author;
+	authorDiv.appendChild(authorPara);
+	let pagesDiv = document.createElement("div");
 	let pagesPara = document.createElement("p");
 	pagesPara.textContent = book.pages;
+	pagesDiv.appendChild(pagesPara);
+	let isReadDiv = document.createElement("div");
 	let isReadPara = document.createElement("p");
 	isReadPara.textContent = book.isRead;
-	addChangeIsReadBtn(isReadPara);
+	isReadDiv.appendChild(isReadPara);
+	addChangeIsReadBtn(isReadDiv, isReadPara);
+	let idDiv = document.createElement("div");
 	let idPara = document.createElement("p");
 	idPara.textContent = book.id;
-	div.appendChild(namePara);
-	div.appendChild(authorPara);
-	div.appendChild(pagesPara);
-	div.appendChild(isReadPara);
-	div.appendChild(idPara);
+	idDiv.appendChild(idPara);
+	div.appendChild(nameDiv);
+	div.appendChild(authorDiv);
+	div.appendChild(pagesDiv);
+	div.appendChild(isReadDiv);
+	div.appendChild(idDiv);
 	library.appendChild(div);
 }
 
-function addChangeIsReadBtn(isReadPara) {
+function addChangeIsReadBtn(isReadDiv, isReadPara) {
 	let changeIsReadBtn = document.createElement("button");
 	changeIsReadBtn.textContent = "Change";
 	changeIsReadBtn.addEventListener("click", function (e) {
 		isReadPara.textContent = (isReadPara.textContent === "Yes") ? "No": "Yes";
 	});
-	isReadPara.appendChild(changeIsReadBtn);
+	isReadDiv.appendChild(changeIsReadBtn);
 }
 
 function cleanInputs() {
