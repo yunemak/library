@@ -69,6 +69,9 @@ function addBookInfo(div, book) {
 		infoDiv = document.createElement("div");
 		infoPara = document.createElement("p");
 		infoPara.textContent = book[info];
+		if (info === "id") {
+			div.dataset.id = book.id;
+		}
 		if (info === "pages") {
 			book[info] = parseInt(book[info]);
 		}
