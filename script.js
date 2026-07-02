@@ -47,30 +47,31 @@ function addBookToLibrary(books, name, author, pages, isRead) {
 	books.push(book);
 	let div = document.createElement("div");
 	div.classList.add("book");
-	addDeleteBtn(div);
+	addDeleteBtn(books, book, div);
 	addBookInfo(div, book);
 }
 
-function addDeleteBtn(div) {
+function addDeleteBtn(books, book, div) {
 	let deleteBtnDiv = document.createElement("div");
 	let deleteBtn = document.createElement("button");
 	deleteBtn.textContent = "delete";
 	deleteBtn.addEventListener("click", function (e) {
 		div.remove();
+		books.splice(books.indexOf(book), 1);
+		// console.table(books);
 	});
 	deleteBtnDiv.appendChild(deleteBtn);
 	div.appendChild(deleteBtnDiv);
 }
 
 function addBookInfo(div, book) {
-	let nameDiv = document.createElement("div");
-	let namePara = document.createElement("p");
-	namePara.textContent = book.name;
-	nameDiv.appendChild(namePara);
 	for (info in book) {
 		infoDiv = document.createElement("div");
 		infoPara = document.createElement("p");
 		infoPara.textContent = book[info];
+		if (info === "pages") {
+			book[info] = parseInt(book[info]);
+		}
 		if (info === "isRead") {
 			addChangeIsReadBtn(infoDiv, infoPara);
 		}
