@@ -20,9 +20,18 @@ const bookNameInput = document.querySelector("#bookName");
 const bookAuthorInput = document.querySelector("#bookAuthor");
 const bookPagesInput = document.querySelector("#bookPages");
 
-const book1 = new Book("1984", "George Orwell", 328, "Yes");
+// Example books
+const n1984 = new Book("1984", "George Orwell", 328, "Yes");
+const aniFar = new Book("Animal Farm", "George Orwell", 152, "Yes");
+const cheSto = new Book("Chess Story", "Stefan Zweig", 96, "Yes");
+const whiFan = new Book("White Fang", "Jack London", 288, "No");
+const criPus = new Book("Crime and Punishment", "Fyodor Dostoevsky", 704, "Yes");
 
-addBookToLibrary(books, book1);
+addBookToLibrary(books, n1984);
+addBookToLibrary(books, aniFar);
+addBookToLibrary(books, cheSto);
+addBookToLibrary(books, whiFan);
+addBookToLibrary(books, criPus);
 
 newBookBtn.addEventListener("click", function (e) {
 	form.style.display = "grid";
