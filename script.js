@@ -9,8 +9,8 @@ class Book {
 }
 
 // Variables
-let books = [];
-const library = document.querySelector(".library");
+let library = [];
+const libraryDiv = document.querySelector(".library");
 const form = document.querySelector("form");
 
 // Buttons
@@ -27,11 +27,11 @@ const cheSto = new Book("Chess Story", "Stefan Zweig", 96, "Yes");
 const whiFan = new Book("White Fang", "Jack London", 288, "No");
 const criPus = new Book("Crime and Punishment", "Fyodor Dostoevsky", 704, "Yes");
 
-addBookToLibrary(books, n1984);
-addBookToLibrary(books, aniFar);
-addBookToLibrary(books, cheSto);
-addBookToLibrary(books, whiFan);
-addBookToLibrary(books, criPus);
+addBookToLibrary(library, n1984);
+addBookToLibrary(library, aniFar);
+addBookToLibrary(library, cheSto);
+addBookToLibrary(library, whiFan);
+addBookToLibrary(library, criPus);
 
 newBookBtn.addEventListener("click", function (e) {
 	form.style.display = "grid";
@@ -44,30 +44,30 @@ addBookBtn.addEventListener("click", function (e) {
 	addBookBtn.style.display = "none";
 	newBookBtn.style.display = "block";
 	let radioIsRead = document.querySelector('input[type="radio"]:checked');
-	addBookToLibrary(books, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value);
+	addBookToLibrary(library, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value);
 	cleanInputs();
 });
 
 // Functions
 
-function addBookToLibrary(books, book) {
+function addBookToLibrary(library, book) {
 	let id = crypto.randomUUID();
 	book.id = id;
-	books.push(book);
+	library.push(book);
 	let div = document.createElement("div");
 	div.classList.add("book");
-	addDeleteBtn(books, book, div);
+	addDeleteBtn(library, book, div);
 	addBookInfo(div, book);
 }
 
-function addDeleteBtn(books, book, div) {
+function addDeleteBtn(library, book, div) {
 	let deleteBtnDiv = document.createElement("div");
 	let deleteBtn = document.createElement("button");
 	deleteBtn.textContent = "delete";
 	deleteBtn.addEventListener("click", function (e) {
 		div.remove();
-		books.splice(books.indexOf(book), 1);
-		// console.table(books);
+		library.splice(library.indexOf(book), 1);
+		// console.table(library);
 	});
 	deleteBtnDiv.appendChild(deleteBtn);
 	div.appendChild(deleteBtnDiv);
@@ -90,7 +90,7 @@ function addBookInfo(div, book) {
 		infoDiv.appendChild(infoPara);
 		div.appendChild(infoDiv);
 	}
-	library.appendChild(div);
+	libraryDiv.appendChild(div);
 }
 
 function addChangeIsReadBtn(isReadDiv, isReadPara) {
