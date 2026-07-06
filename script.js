@@ -44,7 +44,8 @@ addBookBtn.addEventListener("click", function (e) {
 	addBookBtn.style.display = "none";
 	newBookBtn.style.display = "block";
 	let radioIsRead = document.querySelector('input[type="radio"]:checked');
-	addBookToLibrary(library, bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value);
+	
+	addBookToLibrary(library, new Book(bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value));
 	cleanInputs();
 });
 
