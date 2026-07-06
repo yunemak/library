@@ -1,3 +1,14 @@
+// Class
+class Book {
+	constructor (name, author, pages, isRead) {
+		this.name = name;
+		this.author = author;
+		this.pages = pages;
+		this.isRead = isRead;
+	}
+}
+
+// Variables
 let books = [];
 const library = document.querySelector(".library");
 const form = document.querySelector("form");
@@ -9,10 +20,9 @@ const bookNameInput = document.querySelector("#bookName");
 const bookAuthorInput = document.querySelector("#bookAuthor");
 const bookPagesInput = document.querySelector("#bookPages");
 
-addBookToLibrary(books, "Warrior 1", "Ada", 453, "Yes");
-addBookToLibrary(books, "Savior", "Bob", 341, "No");
-addBookToLibrary(books, "Ipsum", "Lorem", 902, "Yes");
-addBookToLibrary(books, "Warrior 2", "Ada", 572, "No");
+const book1 = new Book("1984", "George Orwell", 328, "Yes");
+
+addBookToLibrary(books, book1);
 
 newBookBtn.addEventListener("click", function (e) {
 	form.style.display = "grid";
@@ -31,19 +41,9 @@ addBookBtn.addEventListener("click", function (e) {
 
 // Functions
 
-function Book(name, author, pages, isRead, id) {
-	if (!new.target)
-		throw Error("You called a constructor without the keyword 'new'!");
-	this.name = name;
-	this.author = author;
-	this.pages = pages;
-	this.isRead = isRead;
-	this.id = id;
-}
-
-function addBookToLibrary(books, name, author, pages, isRead) {
+function addBookToLibrary(books, book) {
 	let id = crypto.randomUUID();
-	let book = new Book(name, author, pages, isRead, id);
+	book.id = id;
 	books.push(book);
 	let div = document.createElement("div");
 	div.classList.add("book");
