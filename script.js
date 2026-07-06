@@ -19,6 +19,7 @@ const addBookBtn = document.querySelector("#add-book-btn");
 const bookNameInput = document.querySelector("#bookName");
 const bookAuthorInput = document.querySelector("#bookAuthor");
 const bookPagesInput = document.querySelector("#bookPages");
+const radioIsReadDefault = document.querySelector("#No");
 
 // Example books
 const n1984 = new Book("1984", "George Orwell", 328, "Yes");
@@ -44,13 +45,11 @@ addBookBtn.addEventListener("click", function (e) {
 	addBookBtn.style.display = "none";
 	newBookBtn.style.display = "block";
 	let radioIsRead = document.querySelector('input[type="radio"]:checked');
-	
 	addBookToLibrary(library, new Book(bookNameInput.value, bookAuthorInput.value, bookPagesInput.value, radioIsRead.value));
 	cleanInputs();
 });
 
 // Functions
-
 function addBookToLibrary(library, book) {
 	let id = crypto.randomUUID();
 	book.id = id;
@@ -68,7 +67,6 @@ function addDeleteBtn(library, book, div) {
 	deleteBtn.addEventListener("click", function (e) {
 		div.remove();
 		library.splice(library.indexOf(book), 1);
-		// console.table(library);
 	});
 	deleteBtnDiv.appendChild(deleteBtn);
 	div.appendChild(deleteBtnDiv);
@@ -107,4 +105,5 @@ function cleanInputs() {
 	bookNameInput.value = "";
 	bookAuthorInput.value = "";
 	bookPagesInput.value = "";
+	radioIsReadDefault.checked = true;
 }
