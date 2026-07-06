@@ -19,7 +19,7 @@ const addBookBtn = document.querySelector("#add-book-btn");
 const bookNameInput = document.querySelector("#bookName");
 const bookAuthorInput = document.querySelector("#bookAuthor");
 const bookPagesInput = document.querySelector("#bookPages");
-const radioIsReadDefault = document.querySelector("#No");
+const radioIsReadDefault = document.querySelector('input[value="No"]');
 
 // Example books
 const n1984 = new Book("1984", "George Orwell", 328, "Yes");
